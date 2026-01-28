@@ -2,13 +2,14 @@ services:
   learning_base:
     build: .
     image: energy_predictor/learningbase:latest
+    container_name: energy_predictor_learningbase
     volumes:
       - ai_system:/tmp
     command:
       - sh
       - "-c"
       - |
-        rm -rf /tmp/learningBase/ && cp -r ../learningBase/ /tmp/;
+        rm -rf /tmp/learningBase/ && cp -r ../learningBase/ /tmp/ && tail -f /dev/null;
 volumes:
   ai_system:
     external: true
