@@ -2,6 +2,7 @@ services:
   activation_base:
     build: .
     image: energy_predictor/activationbase:latest
+    container_name: energy_predictor_activationbase
     volumes:
       - ai_system:/tmp
     command:

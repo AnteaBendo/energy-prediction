@@ -5,8 +5,8 @@
    - Antea Bendo
    - Eleni Sklaveniti
 
-Part of the course __‘M. Grum: Advanced AI-based ApplicaGon Systems’__ by the 
-__‘Junior Chair for Business InformaGon Science, esp. AI-based ApplicaGon Systems’__ at University of Potsdam
+Part of the course __‘M. Grum: Advanced AI-based Application Systems’__ by the 
+__‘Junior Chair for Business Information Science, esp. AI-based Application Systems’__ at University of Potsdam
 
 
 ## Working with this image
@@ -18,13 +18,13 @@ The current activation refers to the file activation_data.csv.
 1. Build docker image from Dockerfile specified.
 
     ```
-    docker build --tag energy_predictor/activationbase:latest .
+    docker build --tag energy_predictor_activationbase:latest .
     ```
 
 1. Have a look on the image created.
 
     ```
-    docker run -it --rm energy_predictor/activationbase:latest sh
+    docker run -it --rm energy_predictor_activationbase:latest sh
     ```
 
 ### Alternatively, build local docker image manually with `yml` file.
@@ -43,19 +43,19 @@ The current activation refers to the file activation_data.csv.
 
 ### Test local docker image.
 
-1. Start image with `docker-compose`.
+1. Start conatiner with `docker-compose`.
 
     ```
     docker-compose up
     ```
 
-1. Test your image, e.g. by executing a shell.
+1. Test your container, e.g. by executing a shell.
 
     ```
-    docker exec -it energy_predictor/activationbase:latest sh
+    docker exec -it energy_predictor_activationbase sh
     ```
 
-1. Shut down image with `docker-compose`.
+1. Shut down container with `docker-compose`.
 
     ```
     docker-compose down
@@ -66,7 +66,7 @@ The current activation refers to the file activation_data.csv.
 1. To push the image to `https://hub.docker.com/` the following command can be used.
 
     ```
-    docker image push energy_predictor/activationbase:latest
+    docker image push anteab/energy_predictor_activationbase:latest
     ```
 
 ## Credits
