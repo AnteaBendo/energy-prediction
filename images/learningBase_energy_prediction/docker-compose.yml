@@ -1,8 +1,8 @@
 services:
   learning_base:
     build: .
-    image: energy_predictor/learningbase:latest
-    container_name: energy_predictor_learningbase
+    image: anteab/learningbase_energy_prediction
+    container_name: learningbase_energy_prediction
     volumes:
       - ai_system:/tmp
     command:

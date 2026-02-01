@@ -1,8 +1,8 @@
 services:
   activation_base:
     build: .
-    image: energy_predictor/activationbase:latest
-    container_name: energy_predictor_activationbase
+    image: anteab/activationbase_energy_prediction:latest
+    container_name: activationbase_energy_prediction
     volumes:
       - ai_system:/tmp
     command:

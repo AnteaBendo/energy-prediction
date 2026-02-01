@@ -1,35 +1,35 @@
-# Energy Price Predictor
+# Energy Price Prediction
 
 ### Contributors
 
-- Antea Bendo
-- Eleni Sklaveniti
+   - Antea Bendo
+   - Eleni Sklaveniti
 
-Part of the course __‘M. Grum: Advanced AI-based Application Systems’__ by the
+Part of the course __‘M. Grum: Advanced AI-based Application Systems’__ by the 
 __‘Junior Chair for Business Information Science, esp. AI-based Application Systems’__ at University of Potsdam
 
 
 ## Working with this image
 
-The current activation refers to the files training_data.csv and test_data.csv that can be found under the /data folder.
+The current activation refers to the file activation_data.csv.
 
 ### Building the local docker image manually with `Dockerfile`.
 
 1. Build docker image from Dockerfile specified.
 
     ```
-    docker build --tag energy_predictor_learningbase:latest .
+    docker build --tag activationbase_energy_prediction:latest .
     ```
 
 1. Have a look on the image created.
 
     ```
-    docker run -it --rm energy_predictor_learningbase:latest sh
+    docker run -it --rm activationbase_energy_prediction:latest sh
     ```
 
 ### Alternatively, build local docker image manually with `yml` file.
 
-1. If not available, yet, create independent volume for being bound to image.
+1. If not available yet, create independent volume for being bound to image.
 
     ```
     docker volume create ai_system
@@ -41,7 +41,7 @@ The current activation refers to the files training_data.csv and test_data.csv t
     docker-compose build
     ```
 
-### Test local docker container.
+### Test local docker image.
 
 1. Start container with `docker-compose`.
 
@@ -52,7 +52,7 @@ The current activation refers to the files training_data.csv and test_data.csv t
 1. Test your container, e.g. by executing a shell.
 
     ```
-    docker exec -it energy_predictor_learningbase sh
+    docker exec -it activationbase_energy_prediction sh
     ```
 
 1. Shut down container with `docker-compose`.
@@ -66,7 +66,7 @@ The current activation refers to the files training_data.csv and test_data.csv t
 1. To push the image to `https://hub.docker.com/` the following command can be used.
 
     ```
-    docker image push anteab/energy_predictor_learningbase:latest
+    docker image push anteab/activationbase_energy_prediction:latest
     ```
 
 ## Credits
