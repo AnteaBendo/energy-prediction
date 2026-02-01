@@ -1,0 +1,36 @@
+services:
+  knowledge_base:
+    image: anteab/knowledgebase_energy_prediction
+    volumes:
+      - ai_system:/tmp
+    command:
+      - sh
+      - "-c"
+      - |
+        rm -rf /tmp/knowledgeBase/ && cp -r /knowledgeBase/ /tmp/;
+  activation_base:
+    image: anteab/activationbase_energy_prediction
+    volumes:
+      - ai_system:/tmp
+    command:
+      - sh
+      - "-c"
+      - |
+        rm -rf /tmp/activationBase/ && cp -r /activationBase/ /tmp/;
+  code_base:
+    user: root
+    image: anteab/codebase_energy_prediction
+    volumes:
+      - ai_system:/tmp
+    depends_on:
+      - "knowledge_base"
+      - "activation_base"
+    command:
+      - sh
+      - "-c"
+      - |
+        rm -rf /tmp/codeBase/ && cp -r /codeBase/ /tmp/;
+        python3 /tmp/codeBase/apply_ols_solution.py;
+volumes:
+  ai_system:
+    external: true
