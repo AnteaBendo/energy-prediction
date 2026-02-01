@@ -18,7 +18,6 @@ services:
       - |
         rm -rf /tmp/activationBase/ && cp -r /activationBase/ /tmp/;
   code_base:
-    platform: linux/amd64
     user: root
     image: anteab/codebase_energy_prediction
     volumes:

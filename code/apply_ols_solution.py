@@ -1,15 +1,14 @@
 import numpy as np
 import joblib
 
-model = joblib.load("currentOlsSolution.xml")
+model = joblib.load("/tmp/knowledgeBase/currentOlsSolution.xml")
+data = np.genfromtxt('/tmp/activationBase/current_activation.csv', delimiter=',', names=True, dtype=None, encoding='utf-8')
 
-data = np.genfromtxt('currentActivation.csv', delimiter=',', names=True, dtype=None, encoding='utf-8')
+input_data = np.array([[data['time'], data['price_lag']]])
+input_data_constant = np.column_stack([np.ones(1), input_data])
 
-input_data = np.array([[data['time'], data['target_price']]])
+prediction = model.predict(input_data_constant)
 real_output = data['target_price']
-
-# 4. Run prediction
-prediction = model.predict(input_data)
 
 print("OLS Prediction happened")
 print(f"Real Value: {real_output}")
