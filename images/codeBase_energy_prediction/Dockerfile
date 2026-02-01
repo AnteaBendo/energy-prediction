@@ -1,18 +1,25 @@
 FROM python:3.11-slim
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
+    pkg-config \
+    libhdf5-dev \
     && rm -rf /var/lib/apt/lists/*
 
+RUN pip install --no-cache-dir --upgrade pip
+
+RUN pip install --no-cache-dir tensorflow
+
 RUN pip install --no-cache-dir \
-    tensorflow \
-    matplotlib \
-    scipy \
     numpy \
-    statsmodels \
-    scikit-learn \
     pandas \
+    scipy \
+    matplotlib \
+    scikit-learn \
+    statsmodels \
     joblib
 
 ADD ../../code/apply_ann_solution.py /codeBase/apply_ann_solution.py
 ADD ../../code/apply_ols_solution.py /codeBase/apply_ols_solution.py
+
+CMD ["python3"]
