@@ -1,0 +1,15 @@
+services:
+  activation_base:
+    build: .
+    image: anteab/codebase_energy_prediction:latest
+    container_name: codebase_energy_prediction
+    volumes:
+      - ai_system:/tmp
+    command:
+      - sh
+      - "-c"
+      - |
+        rm -rf /tmp/codeBase/ && cp -r ../codeBase/ /tmp/;
+volumes:
+  ai_system:
+    external: true
