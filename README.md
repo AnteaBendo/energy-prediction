@@ -159,6 +159,9 @@ Real Value: -1.82551288
 Prediction: -1.8255
 ```
 
+## Credits
+The data used in this project is taken from the following api: [Energy Charts API](https://api.energy-charts.info/#/prices/day_ahead_price_price_get)
+
 ## License
 
 This project is licensed under the [**GNU Affero General Public License v3.0 (AGPL-3.0)**](https://www.gnu.org/licenses/agpl-3.0.en.html) .
